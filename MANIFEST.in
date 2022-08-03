@@ -1,1 +1,2 @@
-graft zezere/templates *
+graft zezere/templates
+graft zezere/fixtures
