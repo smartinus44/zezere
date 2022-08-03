@@ -1,6 +1,6 @@
 Name:          zezere
-Version:       0.5
-Release:       2%{?dist}
+Version:       0.5.2
+Release:       1%{?dist}
 Summary:       A provisioning service for Fedora IoT
 License:       MIT
 URL:           https://github.com/fedora-iot/zezere
@@ -31,6 +31,7 @@ An Ignition client for Zezere managed systems.
 
 %install
 %py3_install
+
 install zezere_ignition/__init__.py %{buildroot}/usr/bin/zezere-ignition
 chmod +x %{buildroot}/usr/bin/zezere-ignition
 mkdir -p %{buildroot}%{_unitdir}
@@ -52,6 +53,40 @@ ln -s /run/zezere-ignition-banner %{buildroot}%{_sysconfdir}/issue.d/zezere_igni
 %{_unitdir}/*
 
 %changelog
+* Wed Aug 03 2022 Peter Robinson <pbrobinson@fedoraproject.org> - 0.5.2-1
+- Update to 0.5.2
+
+* Sat Jul 23 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.5-12
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
+* Mon Jun 13 2022 Python Maint <python-maint@redhat.com> - 0.5-11
+- Rebuilt for Python 3.11
+
+* Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.5-10
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
+* Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.5-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
+* Fri Jun 04 2021 Python Maint <python-maint@redhat.com> - 0.5-8
+- Rebuilt for Python 3.10
+
+* Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.5-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.5-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
+* Tue Jul 21 2020 Adam Williamson <awilliam@redhat.com> - 0.5-5
+- Backport patch to show all unclaimed devices to admins in web UI
+- Also include the fixtures in the package as they're necessary
+
+* Mon Jul 13 2020 Adam Williamson <awilliam@redhat.com> - 0.5-4
+- Install the HTML template files (#1855927)
+
+* Tue May 26 2020 Miro Hrončok <mhroncok@redhat.com> - 0.5-3
+- Rebuilt for Python 3.9
+
 * Wed Apr 15 2020 Peter Robinson <pbrobinson@fedoraproject.org> - 0.5-2
 - Update to 0.5
 
