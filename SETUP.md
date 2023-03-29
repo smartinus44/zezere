@@ -77,5 +77,16 @@ The easiest way to run Zezere is to run the official container and authenticate
      -t quay.io/fedora-iot/zezere:latest
  ```
 
+# Setup using Podman with a local auth method
+ 
+ ```
+ $ podman run --detach --rm --name zezere \
+    -e AUTH_METHOD=local \
+    -e SECRET_KEY=localtest \
+    -e ALLOWED_HOSTS=localhost \
+    -p 8080:8080 \
+    -t quay.io/fedora-iot/zezere:latest
+ ```
+
  The default signing algorithm is `RS256` but it can also be controlled with the
  environment variable `OIDC_OP_SIGN_ALGO`
